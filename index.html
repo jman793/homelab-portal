@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="evondev-dracula">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>homelab-portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>homelab-portal</h1>
+      <p class="tagline">Landing page for the homelab Kubernetes cluster.</p>
+    </header>
+
+    <section>
+      <h2>Services</h2>
+      <ul class="links" id="services-list"></ul>
+    </section>
+  </main>
+
+  <script>
+    const services = [
+      {
+        name: "Example service (replace me)",
+        url: "#",
+        icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237aa2f7'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3C/svg%3E",
+      },
+    ];
+
+    const list = document.getElementById("services-list");
+    for (const s of services) {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = s.url;
+
+      const img = document.createElement("img");
+      img.src = s.icon;
+      img.alt = "";
+
+      const span = document.createElement("span");
+      span.textContent = s.name;
+
+      a.append(img, span);
+      li.append(a);
+      list.append(li);
+    }
+  </script>
+</body>
+
+</html>
